@@ -42,7 +42,7 @@
 }
 /* Cố định nút ở góc dưới bên hông màn hình (thay đổi right thành left nếu muốn để bên trái) */
 /* Nút điều khiển nhạc */
-        #musicControl {
+#musicControl {
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -69,8 +69,6 @@
             color: white;
             user-select: none;
         }
-
-  
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
