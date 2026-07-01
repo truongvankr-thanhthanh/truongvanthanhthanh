@@ -1,30 +1,83 @@
-#musicControl {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            width: 50px;
-            height: 50px;
-            background-color: #ff5722;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease;
-        }
+/* Căn giữa khung thanh toán trên trang web */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
 
-        #musicControl:hover {
-            transform: scale(1.1);
-        }
+/* Định dạng hộp chứa mã thanh toán */
+.qr-box {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 320px;
+    border: 2px solid #e0e0e0;
+}
 
-        /* Biểu tượng (Dùng ký tự đặc biệt hoặc bạn có thể thay bằng icon FontAwesome/ảnh) */
-        #musicControl span {
-            font-size: 24px;
-            color: white;
-            user-select: none;
-        }
+/* Tiêu đề của khung */
+.qr-box h3 {
+    margin-top: 0;
+    color: #333333;
+    font-size: 1.2rem;
+}
+
+/* Định dạng hình ảnh mã QR */
+.qr-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Văn bản hướng dẫn bên dưới mã */
+.qr-box p {
+    margin-top: 15px;
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+/* Cố định nút ở góc dưới bên hông màn hình (thay đổi right thành left nếu muốn để bên trái) */
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff5722; /* Màu nền của nút */
+    color: white; /* Màu biểu tượng */
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  /* Hiệu ứng rung nhẹ khi di chuột vào */
+  #music-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  /* Hiệu ứng xoay biểu tượng khi đang phát nhạc */
+  .playing #music-icon {
+    display: inline-block;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
