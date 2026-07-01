@@ -39,7 +39,7 @@
 
     <!-- Biểu tượng tắt/mở nhạc ở góc dưới cùng bên phải -->
     <div id="musicControl" onclick="toggleMusic()">
-        <span id="iconState">🎵</span>
+        <span id="iconState">>🔊</span>
     </div>
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -493,43 +493,29 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-    // Tự động phát nhạc sau khi người dùng có tương tác đầu tiên với trang web 
-    // (Yêu cầu bắt buộc của các trình duyệt hiện đại như Chrome, Safari)
-    document.addEventListener('DOMContentLoaded', function() {
-      var music = document.getElementById("bg-music");
-      var button = document.getElementById("music-toggle");
-  
-      // Thêm class phát nhạc ban đầu (vì có thuộc tính autoplay)
-      if (!music.paused) {
-        button.classList.add("playing");
-      }
-  
-      // Phát nhạc ngay khi người dùng click bất kỳ đâu trên web (nếu trình duyệt chặn autoplay)
-      document.body.addEventListener('click', function() {
-        if (music.paused) {
-          music.play().then(function() {
-            button.classList.add("playing");
-          }).catch(function(error) {
-            console.log("Trình duyệt chưa cho phép phát tự động.");
-          });
+        var audio = document.getElementById("bgMusic");
+        var icon = document.getElementById("iconState");
+
+        // Tự động phát nhạc khi tải trang (Lưu ý: Một số trình duyệt chặn autoplay nếu người dùng chưa tương tác với trang)
+        window.onload = function() {
+            audio.play().catch(function(error) {
+                console.log("Trình duyệt chặn autoplay, vui lòng nhấp vào nút phát.");
+            });
+        };
+
+        // Hàm xử lý bật/tắt nhạc
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                icon.innerText = "🔊"; // Biểu tượng bật nhạc
+            } else {
+                audio.pause();
+                icon.innerText = "🔇"; // Biểu tượng tắt nhạc
+            }
         }
-      }, { once: true });
-    });
-  
-    // Hàm xử lý Bật/Tắt nhạc khi click vào nút
-    function toggleMusic() {
-      var music = document.getElementById("bg-music");
-      var button = document.getElementById("music-toggle");
-      
-      if (music.paused) {
-        music.play();
-        button.classList.add("playing"); // Thêm hiệu ứng xoay
-      } else {
-        music.pause();
-        button.classList.remove("playing"); // Dừng hiệu ứng xoay
-      }
-    }
-  </script>     
+    </script>
+
+</body    
     </body>
 
 </html>
