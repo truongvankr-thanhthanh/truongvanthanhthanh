@@ -1,5 +1,4 @@
- /* Cố định nút ở góc dưới bên hông màn hình (thay đổi right thành left nếu muốn để bên trái) */
- #music-toggle {
+#music-toggle {
       position: fixed;
       bottom: 20px;
       left: 20px;
