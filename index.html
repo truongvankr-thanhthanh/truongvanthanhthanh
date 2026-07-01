@@ -32,8 +32,19 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-    <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
-
+    <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">         
+        <title>Phát nhạc nền</title>
+        
+  
+    
+        <!-- Thẻ Audio ẩn (chạy nền) -->
+        <!-- Thêm thuộc tính autoplay để phát tự động, loop để phát lại khi hết bài -->
+        <audio id="bgMusic" src="img/MyLove.mp3" loop></audio>
+    
+        <!-- Biểu tượng tắt/mở nhạc ở góc dưới cùng bên phải -->
+        <div id="musicControl" onclick="toggleMusic()">
+            <span id="iconState">🔊</span>
+        </div>
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" role="status"></div>
