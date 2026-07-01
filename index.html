@@ -34,13 +34,14 @@
 
     <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">           
      <body>
-        <!-- Nút bật/tắt nhạc nằm bên hông màn hình -->
-<audio id="bg-music" src="img/MyLove.mp3" loop autoplay></audio>
+
+    <!-- Thẻ Audio ẩn (chạy nền) -->
+    <!-- Thêm thuộc tính autoplay để phát tự động, loop để phát lại khi hết bài -->
+    <audio id="bg-music" src="img/MyLove.mp3" loop autoplay></audio>
 
     <!-- Biểu tượng tắt/mở nhạc ở góc dưới cùng bên phải -->
     <div id="musicControl" onclick="toggleMusic()">
         <span id="iconState">🔊</span>
-    </div>
         
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
