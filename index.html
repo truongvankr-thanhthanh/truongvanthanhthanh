@@ -33,13 +33,14 @@
     </head>
 
     <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">         
-         <!-- Nút bật/tắt nhạc nằm bên hông màn hình -->
-<audio id="bgMusic" src="link_nhạc_của_bạn.mp3" autoplay></audio>
-
-    <!-- Biểu tượng tắt/mở nhạc ở góc dưới cùng bên phải -->
-    <div id="musicControl" onclick="toggleMusic()">
-        <span id="iconState">🎵</span>
-    </div>
+    <!-- Nút bật/tắt nhạc nằm bên hông màn hình -->
+<button id="music-toggle" onclick="toggleMusic()">
+    <span id="music-icon">🎵</span>
+  </button>
+  
+  <!-- Phần tử phát nhạc nền -->
+  <!-- Thay đổi link src="link-nhac.mp3" thành đường dẫn file nhạc của bạn -->
+  <audio id="bg-music" src="img/MyLove.mp3" loop autoplay></audio>
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" role="status"></div>
@@ -491,7 +492,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
+     <script>
     // Tự động phát nhạc sau khi người dùng có tương tác đầu tiên với trang web 
     // (Yêu cầu bắt buộc của các trình duyệt hiện đại như Chrome, Safari)
     document.addEventListener('DOMContentLoaded', function() {
@@ -528,7 +529,7 @@
         button.classList.remove("playing"); // Dừng hiệu ứng xoay
       }
     }
-  </script>               
+  </script>             
     </body>
 
 </html>
